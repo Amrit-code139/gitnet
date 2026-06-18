@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffb6c1, #ffd6e8, #ffe4f2);
+}
+
+.container {
+  text-align: center;
+  background: rgba(255,255,255,0.3);
+  padding: 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: float 3s ease-in-out infinite;
+}
+
+.title {
+  font-size: 50px;
+  color: #ff1493;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: #ff1493;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ff69b4;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #d6006e;
+  font-weight: bold;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Floating Hearts */
+.hearts::before,
+.hearts::after {
+  content: "💖 💕 💗 💘 💝";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  animation: move 10s linear infinite;
+  opacity: 0.5;
+}
+
+.hearts::after {
+  animation-delay: 5s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-120vh);
+  }
+}
